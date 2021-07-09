@@ -689,28 +689,15 @@ $ kubectl label anticorona tutorial istio-issue=enabled
 ```
 
 - Virsual Service 생성 (Timeout 3초 설정)
-- anticorona/issue/kubernetes/issue-istio.yaml 파일 
+- anticorona/applying/kubernetes/applying-istio.yaml 파일 
 
-```yml
-  apiVersion: networking.istio.io/v1alpha3
-  kind: VirtualService
-  metadata:
-    name: vs-applying-network-rule
-    namespace: anticorona
-  spec:
-    hosts:
-    - booking
-    http:
-    - route:
-      - destination:
-          host: applying
-      timeout: 3s
+![image](https://user-images.githubusercontent.com/82795860/125012611-701b6000-e0a5-11eb-9155-da808d750007.png)
 ```	  
 
-![image](https://user-images.githubusercontent.com/82795806/120985451-956f3280-c7b6-11eb-95a4-eb5a8c1ebce4.png)
 
 
-- Booking 서비스 재배포 후 Pod에 CB 부착 확인
+
+- Applying 서비스 재배포 후 Pod에 CB 부착 확인
 
 ![image](https://user-images.githubusercontent.com/82795806/120985804-ed0d9e00-c7b6-11eb-9f13-8a961c73adc0.png)
 
